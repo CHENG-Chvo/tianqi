@@ -11,7 +11,7 @@ class WeatherController extends Controller
     {
         $location = $request->param('location'); // 获取用户发送的地点
 
-        $api_key = "YOUR_API_KEY"; // 在心知天气官网注册并获取API Key
+        $api_key = "PeKpZPeGMdYI-Cdno"; // 在心知天气官网注册并获取API Key
         $api_url = "https://api.seniverse.com/v3/weather/now.json?key={$api_key}&location={$location}&language=zh-Hans&unit=c";
 
         $response = Http::get($api_url);
