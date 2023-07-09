@@ -46,19 +46,3 @@ EXPOSE 80
 # 请参考[Docker官方文档之CMD命令](https://docs.docker.com/engine/reference/builder/#cmd)
 CMD ["sh", "run.sh"]
 
-server {
-    listen 80;
-    server_name your-domain.com;
-
-    location / {
-        try_files $uri $uri/ /index.php$is_args$args;
-    }
-
-    location /weather {
-        rewrite ^/weather/(.*)$ /index.php/index/weather/index?location=$1 last;
-    }
-
-    # 其他配置...
-}
-
-
